@@ -8,6 +8,6 @@ Then, you just have to [download](https://github.com/MeblIkea/Jalopy-PaperPlease
 
 ## Contact
 
-If you have any questions, you can contact me on Discord: <b>Meb#2325</b>, or join <b>[Minskworks Discord server](https://discord.gg/TqCwKdR)</b>.
+If you have any questions, you can contact me on Discord: <b>@meblikea</b>, or join <b>[Minskworks Discord server](https://discord.gg/TqCwKdR)</b>.
 <b>Also, I'm open to feature suggestion/ mod suggestion =)</b>
 
