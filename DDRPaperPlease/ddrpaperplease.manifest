@@ -1,0 +1,36 @@
+ManifestFileVersion: 0
+CRC: 362794839
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 77c7c3f5f9dfe0c5a267680db61fb671
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b82a4f07a80c9c8f46a1df2669b57c89
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 82
+  Script: {instanceID: 0}
+- Class: 83
+  Script: {instanceID: 0}
+- Class: 241
+  Script: {instanceID: 0}
+- Class: 243
+  Script: {instanceID: 0}
+- Class: 245
+  Script: {instanceID: 0}
+Assets:
+- Assets/Assets/AssetBundles/mixerhaha.mixer
+- Assets/Assets/AssetBundles/Papers, Please Theme Song.mp3
+- Assets/Assets/AssetBundles/paper_sound_emitter.prefab
+Dependencies: []
