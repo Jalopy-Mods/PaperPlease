@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jalopy-PaperPlease", "Jalopy-PaperPlease\Jalopy-PaperPlease.csproj", "{22D1B617-9F1D-4901-A176-ABFD99CD7424}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22D1B617-9F1D-4901-A176-ABFD99CD7424}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22D1B617-9F1D-4901-A176-ABFD99CD7424}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22D1B617-9F1D-4901-A176-ABFD99CD7424}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22D1B617-9F1D-4901-A176-ABFD99CD7424}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
