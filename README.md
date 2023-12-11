@@ -1,3 +1,5 @@
+[![](https://img.shields.io/github/downloads/Jalopy-Mods/DDR-PaperPlease/total)](#)
+
 You can get <b>[a preview here](https://youtu.be/iFBLRI4w0Rw)</b>.
 <br>
 ## Installation
