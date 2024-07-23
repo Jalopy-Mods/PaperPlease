@@ -4,6 +4,12 @@ You can get <b>[a preview here](https://youtu.be/iFBLRI4w0Rw)</b>.
 <br>
 ## Installation
 
+### JaDownloader
+
+With JaDownloader enabled, past this in your browser URL bar `jaloader://install/Jalopy-Mods/PaperPlease`.
+
+### Manual Install
+
 For using the mod, you need to have <b>[JaLoader](https://github.com/theLeaxx/JaLoader)</b> installed.
 
 Then, you just have to [download](https://github.com/MeblIkea/Jalopy-PaperPlease/releases) the mod from the Releases, and you can drag & drop both DLL and the folder, in the **Mods** folder in your Jalopy folder (the one that you can choose while setuping Jaloader).<br><br>
