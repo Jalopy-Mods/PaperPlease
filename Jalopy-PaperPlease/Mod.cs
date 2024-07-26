@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using JaLoader;
 using UnityEngine;
 
@@ -7,36 +8,54 @@ namespace Jalopy_PaperPlease
     public class JalopyPaperPlease : Mod
     {
         public override string ModID => "DDRPaperPlease";
-        public override string ModName => "DDR Paper Please";
+        public override string ModName => "DDR Papers Please";
         public override string ModAuthor => "MeblIkea";
-        public override string ModDescription => "This mod adds Paper Please frontier music to the game.";
-        public override string ModVersion => "1.0.0";
+        public override string ModDescription => "This mod adds Papers Please frontier music to the game.";
+        public override string ModVersion => "1.0.1";
+        public override string GitHubLink => "https://github.com/Jalopy-Mods/PaperPlease/";
 
         public override bool UseAssets => true;
         public override WhenToInit WhenToInit => WhenToInit.InGame; // OR WhenToInit.InMenu (In menu is both)
 
+        private GameObject sound;
+
+        public override void EventsDeclaration()
+        {
+            base.EventsDeclaration();
+
+            EventsManager.Instance.OnRouteGenerated += OnRouteGenerated;
+        }
+
+        private void OnRouteGenerated(string startLocation, string endLocation, int distance)
+        {
+            Invoke("AddSound", 5);
+        }
+
+        public override void OnEnable()
+        {
+            sound = LoadAsset<GameObject>("ddrpaperplease", "paper_sound_emitter", "", ".prefab");
+            sound.SetActive(false);
+        }
+
         public override void Start()
         {
-            var sound = LoadAsset("ddrpaperplease", "paper_sound_emitter", "");
-            StartCoroutine(WaitForBorder(sound));
+            base.Start();
+
+            Invoke("AddSound", 5);
         }
 
-        private static IEnumerator WaitForBorder(GameObject sound)
+        private void AddSound()
         {
-            yield return GameObject.Find("Hub_02");
-            yield return GameObject.Find("CSFR_Hub_Sturovo(Clone)");
-            yield return GameObject.Find("HUN_Letenye");
-            yield return GameObject.Find("CSFR_Hub_Sturovo");
-            yield return GameObject.Find("BUL_HUB_01 1");
-            yield return GameObject.Find("YUGO_Hub_01");
-            foreach (var gameobject in FindObjectsOfType<GameObject>())
+            foreach(var border in FindObjectsOfType<BorderLogicC>())
             {
-                if (gameobject.GetComponents<BorderLogicC>().Length <= 0) continue;
-                var nO = Instantiate(sound, gameobject.transform);
-                var position = nO.transform.position;
-                nO.transform.position = new Vector3(position.x, position.y - 2, position.z);
+                if (border.transform.Find("PapersPleaseSong")) // it already has the song
+                    continue;
+
+                var obj = Instantiate(sound, border.transform);
+                obj.name = "PapersPleaseSong";
+                obj.SetActive(true);
+                obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y - 2, obj.transform.position.z);
             }
         }
-
     }
 }
