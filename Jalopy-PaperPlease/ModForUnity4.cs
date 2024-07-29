@@ -1,11 +1,14 @@
 ﻿using System;
-using System.Collections;
-using JaLoader;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using JaLoaderUnity4;
 using UnityEngine;
 
 namespace Jalopy_PaperPlease
 {
-    public class JalopyPaperPlease : Mod
+    public class ModForUnity4 : ModUnity4
     {
         public override string ModID => "DDRPaperPlease";
         public override string ModName => "DDR Papers Please";
@@ -26,15 +29,16 @@ namespace Jalopy_PaperPlease
             EventsManager.Instance.OnRouteGenerated += OnRouteGenerated;
         }
 
-        private void OnRouteGenerated(string startLocation, string endLocation, int distance)
-        {
-            Invoke("AddSound", 5);
-        }
-
         public override void OnEnable()
         {
-            sound = LoadAsset<GameObject>("ddrpaperplease", "paper_sound_emitter", "", ".prefab");
+            sound = LoadAsset<GameObject>("ddrpaperplease", "paper_sound_emitter", "", "");
             sound.SetActive(false);
+        }
+
+        private void OnRouteGenerated(string startLocation, string endLocation, int distance)
+        {
+            Debug.Log("Route generated");
+            Invoke("AddSound", 5);
         }
 
         public override void Start()
@@ -46,12 +50,14 @@ namespace Jalopy_PaperPlease
 
         private void AddSound()
         {
-            foreach(var border in FindObjectsOfType<BorderLogicC>())
+            foreach (var border in FindObjectsOfType<BorderLogic>())
             {
                 if (border.transform.Find("PapersPleaseSong")) // it already has the song
                     continue;
 
-                var obj = Instantiate(sound, border.transform);
+                var obj = Instantiate(sound as UnityEngine.Object) as GameObject;
+                obj.transform.parent = border.transform;
+                obj.transform.position = border.transform.position;
                 obj.name = "PapersPleaseSong";
                 obj.SetActive(true);
                 obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y - 2, obj.transform.position.z);
