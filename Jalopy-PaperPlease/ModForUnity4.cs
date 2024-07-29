@@ -31,7 +31,7 @@ namespace Jalopy_PaperPlease
 
         public override void OnEnable()
         {
-            sound = LoadAsset<GameObject>("ddrpaperplease", "paper_sound_emitter", "", "");
+            sound = LoadAsset<GameObject>("ddrpaperplease_1.0", "paper_sound_emitter", "", "");
             sound.SetActive(false);
         }
 
